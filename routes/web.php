@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ContohControler;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/asdasd', function () {
-    return view('welcome');
-});
+Route::get('/', PageController::class)->name('home');
+Route::get('/products', PageController::class)->name('products');
+Route::get('/testimonials', PageController::class)->name('testimonials');
+Route::get('/about', PageController::class)->name('about');
+Route::get('/cart', PageController::class)->name('cart');
+// Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart');
 
-// Route::get('/halaman1', [TamuController::class, ''])
 
-Route::resource('contoh', ContohControler::class);
 
